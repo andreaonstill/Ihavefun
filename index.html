@@ -88,6 +88,10 @@ class="w-full bg-sky-400 hover:bg-sky-500 text-white font-bold text-lg px-6 py-4
 Buy English-German version
 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
 </a>
+<a href="https://www.amazon.com/dp/B0G1YHHKJR" target="_blank"class="w-full bg-sky-400 hover:bg-sky-500 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg shadow-sky-200 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+Buy English-French version
+<i data-lucide="shopping-cart" class="w-5 h-5"></i>
+</a>                   
 <a href="#about"
 class="w-full bg-white hover:bg-slate-50 text-slate-700 font-bold text-lg px-6 py-4 rounded-full shadow-sm border border-slate-100 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
 Learn More
@@ -322,10 +326,6 @@ Learn More
             <p class="text-2xl text-slate-700 mb-10 max-w-2xl mx-auto">
                 "I Have Fun — Discover the joy of everyday moments."
             </p>
-            <a href="https://www.amazon.com/dp/B0G1YHHKJR" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white text-slate-800 font-bold text-xl px-10 py-5 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all w-full sm:w-auto">
-                <i data-lucide="shopping-bag" class="text-amber-500"></i>
-                Buy English-French version
-            </a>
         </div>
     </section>
 
@@ -336,12 +336,28 @@ Learn More
                     <h2 class="font-display text-4xl text-white mb-6">Stay Connected</h2>
                     <p class="mb-8">Subscribe to receive book announcements, free activity sheets, and updates.</p>
                     
-                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" placeholder="email" class="px-6 py-4 bg-slate-800 border border-slate-700 rounded-full focus:outline-none focus:border-amber-400 text-white w-full" required>
-                        <button type="submit" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-full transition-colors whitespace-nowrap">
-                            Subscribe
-                        </button>
-                    </form>
+                   <form 
+action="https://assets.mailerlite.com/jsonp/2194134/forms/182045670412125935/subscribe"
+method="post"
+target="_blank"
+class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+
+<input
+type="email"
+name="fields[email]"
+placeholder="Enter your email"
+required
+class="flex-1 px-6 py-4 rounded-full border border-slate-300 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400">
+
+<button
+type="submit"
+class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-full shadow-lg transition">
+Subscribe
+</button>
+
+<input type="hidden" name="ml-submit" value="1">
+
+</form>
                 </div>
                 
                 <div class="md:text-right">
@@ -373,5 +389,6 @@ Learn More
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="module" src="app.js"></script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js"></script>
 </body>
 </html>

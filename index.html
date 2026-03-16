@@ -313,43 +313,36 @@
                     <h2 class="font-display text-4xl text-white mb-6">Stay Connected</h2>
                     <p class="mb-8">Subscribe to receive book announcements, free activity sheets, and updates.</p>
                     
-                   <form 
-action="https://assets.mailerlite.com/jsonp/2194134/forms/182045670412125935/subscribe"
-method="post"
-target="_blank"
-class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+<form 
+    action="https://assets.mailerlite.com/jsonp/2194134/forms/182045670412125935/subscribe"
+    method="post"
+    target="_self" 
+    class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto"
+>
+    <input
+        type="email"
+        name="fields[email]"
+        placeholder="Enter your email"
+        required
+        class="flex-1 px-6 py-4 rounded-full border border-slate-300 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400"
+    >
+    <button
+        type="submit"
+        class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-full shadow-lg transition"
+    >
+        Subscribe
+    </button>
 
-<input
-type="email"
-name="fields[email]"
-placeholder="Enter your email"
-required
-class="flex-1 px-6 py-4 rounded-full border border-slate-300 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400">
-
-<button
-type="submit"
-class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-full shadow-lg transition">
-Subscribe
-</button>
-
-<input type="hidden" name="ml-submit" value="1">
-<input type="hidden" name="redirect" value="https://andreaonstill.github.io/Ihavefun/#thankyou">
+    <input type="hidden" name="ml-submit" value="1">
+    <!-- This will redirect to your site after submission -->
+    <input type="hidden" name="redirect" value="https://andreaonstill.github.io/Ihavefun/#thankyou">
 </form>
                 </div>
                 
                 <div class="md:text-right">
                     <h3 class="font-bold text-xl text-white mb-4">Contact</h3>
-                    <p class="mb-6">For preschool readings, bulk orders, or general inquiries, please reach out!</p>
-                    
-                    <div class="flex gap-4 md:justify-end mb-8">
-                        <a href="#" class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                    <p class="mb-6">For preschool readings, bulk orders, or general inquiries, reach out!</p>
+                
                         </a>
                     </div>
                 </div>

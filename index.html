@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <section id="author" class="py-16 bg-brand-blue/20">
+    <section id="author" class="py-12 bg-brand-blue/20">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white rounded-[3rem] p-6 md:p-12 shadow-xl shadow-brand-blue/10 flex flex-col md:flex-row gap-12 items-center section-reveal">
                 <div class="w-full md:w-1/3">
@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <section id="activities" class="py-24 bg-brand-green/10 relative">
+    <section id="activities" class="py-16 bg-brand-green/10 relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 section-reveal">
                 <h2 class="font-display text-4xl md:text-5xl text-slate-800 mb-4">Activities for Kids</h2>
@@ -245,7 +245,7 @@
         </div>
     </section>
 
-    <section id="reviews" class="py-16 bg-white">
+    <section id="reviews" class="py-12 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 section-reveal">
                 <div class="flex justify-center gap-1 mb-4">
@@ -306,22 +306,16 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 bg-slate-900 text-slate-300">
+    <section id="contact" class="py-12 bg-slate-900 text-slate-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h2 class="font-display text-4xl text-white mb-6">Stay Connected</h2>
-                    <p class="mb-8">Subscribe to receive book announcements, free activity sheets, and updates.</p>
-                    
-<form 
-    action="https://assets.mailerlite.com/jsonp/2194134/forms/182045670412125935/subscribe"
-    method="post"
-    target="_self" 
-    class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto"
->
+                    <p class="mb-8">Subscribe to receive book announcements, free activity sheets, and updates.</p>      
+<form id="subscribeForm" class="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
     <input
         type="email"
-        name="fields[email]"
+        name="email"
         placeholder="Enter your email"
         required
         class="flex-1 px-6 py-4 rounded-full border border-slate-300 text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-400"
@@ -332,11 +326,40 @@
     >
         Subscribe
     </button>
-
-    <input type="hidden" name="ml-submit" value="1">
-    <!-- This will redirect to your site after submission -->
-    <input type="hidden" name="redirect" value="https://andreaonstill.github.io/Ihavefun/#thankyou">
 </form>
+
+<div id="thankYouMessage" class="hidden mt-4 text-center text-green-600 font-bold">
+    Thanks for subscribing!
+</div>
+
+<script>
+document.getElementById("subscribeForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal form submission
+
+    const email = this.querySelector('input[name="email"]').value;
+    const formData = new FormData();
+    formData.append('fields[email]', email);
+    formData.append('ml-submit', '1');
+
+    fetch("https://assets.mailerlite.com/jsonp/2194134/forms/182045670412125935/subscribe", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById("thankYouMessage").classList.remove("hidden");
+            this.reset(); // optional: clear the input
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        alert("Could not connect. Please try later.");
+    });
+});
+</script>
                 </div>
                 
                 <div class="md:text-right">
